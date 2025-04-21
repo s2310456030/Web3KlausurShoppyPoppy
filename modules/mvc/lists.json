@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "userid": 1,
+      "username": "Alex",
+      "userStatus": 0,
+      "lists": ["Hardware", "Drogerie"]
+    },
+    {
+      "userid": 2,
+      "username": "User2",
+      "userStatus": 1,
+      "lists": ["Supermarkt", "Drogerie"]
+    }
+  ],
+  "lists": [
+    {
+      "name": "Supermarkt",
+      "items": [
+        { "name": "Banane", "tags": ["Obst"], "count": 8 },
+        { "name": "Kiwi", "tags": ["Obst"], "count": 5 },
+        { "name": "Orangensaft", "tags": ["Getränke"], "count": 1 }
+      ]
+    },
+    {
+      "name": "Drogerie",
+      "items": [
+        { "name": "Gesichtscreme", "tags": ["Creme"], "count": 1 }
+      ]
+    },
+    {
+      "name": "Neuer PC",
+      "items": [
+        { "name": "Grafikkarte", "tags": ["Hardware"], "count": 1 },
+        { "name": "Monitor", "tags": ["Hardware"], "count": 2 }
+      ]
+    }
+  ],
+  "tags": [
+    { "tagname": "Obst" },
+    { "tagname": "Getränke" },
+    { "tagname": "Lebensmittel" },
+    { "tagname": "Creme" },
+    { "tagname": "Hardware" }
+  ],
+  "articles": [
+    {
+      "name": "Banane",
+      "tags": [
+        "Obst"
+      ]
+    },
+    {
+      "name": "Kiwi",
+      "tags": [
+        "Obst"
+      ]
+    },
+    {
+      "name": "Orangensaft",
+      "tags": [
+        "Getränke"
+      ]
+    },
+    {
+      "name": "Butter",
+      "tags": [
+        "Lebensmittel"
+      ]
+    },
+    {
+      "name": "Gesichtscreme",
+      "tags": [
+        "Creme"
+      ]
+    },
+    {
+      "name": "Grafikkarte",
+      "tags": [
+        "Hardware"
+      ]
+    },
+    {
+      "name": "Monitor",
+      "tags": [
+        "Hardware"
+      ]
+    }
+  ]
+}
