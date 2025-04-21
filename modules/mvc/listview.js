@@ -1,5 +1,4 @@
 // Importiere die Klasse für Listenobjekte und den Controller
-import Listing from "../classes/List.js";
 import { listController } from "./listController.js";
 
 // View-Klasse zur Darstellung von Listen im UI
