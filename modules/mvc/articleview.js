@@ -61,7 +61,6 @@ export class ArticleView {
         for (let i = 0; i < items.length; i++) {
             const item = items[i];
             const name = item.getName();
-            const symbol = item.getSymbol();
             const tags = item.getTags();
 
             const accordionItem = document.createElement("div");

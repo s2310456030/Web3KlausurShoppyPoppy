@@ -26,7 +26,7 @@ export default class Subject {
      * Übergibt dabei den Ereignistyp und beliebige Daten.
      */
     notify(eventType, data) {
-        console.log(`Notification: "${eventType}" mit Daten:`, data);
+        console.log(`Notification: "${eventType}"`);
 
         this.observers.forEach(observer => {
             // Nur Observer mit update()-Methode verarbeiten

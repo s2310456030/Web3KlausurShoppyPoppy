@@ -1,7 +1,6 @@
 export default class Article {
     id;
     name;
-    symbol;
     tags;
     static id_counter = 0;
 

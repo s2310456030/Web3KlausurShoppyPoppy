@@ -192,6 +192,37 @@ export class PoppyModel extends Subject {
 
         return newArticle;
     }
+
+    /**
+     * Alternative Methode, um ein Item direkt zur Liste hinzuzufügen (veraltet?).
+     */
+    createItemInList(list) {
+        let count = parseInt(document.getElementById("existingItemCount").value, 10);
+        let articleName = document.getElementById("existingArticleSelect").value;
+
+        if (!articleName || isNaN(count) || count < 1) {
+            alert("Bitte gültige Eingaben machen.");
+            return;
+        }
+
+        let existingItem = list.getItems().find(item => item.getName() === articleName);
+        if (existingItem) {
+            alert(`Der Artikel "${articleName}" existiert bereits in der Liste.`);
+            return;
+        }
+
+        let article = this.articles.find(art => art.name === articleName);
+        if (!article) {
+            alert("Fehler: Artikel nicht gefunden.");
+            return;
+        }
+
+        let newItem = new Item(article.name, article.symbol, count, false, article.tags);
+
+        list.addItem(newItem);
+        list.openList();
+    }
+
     /**
      * Setzt den neuen Namen eines Tags und passt Artikel entsprechend an.
      */
@@ -249,7 +280,7 @@ export class PoppyModel extends Subject {
             this.articles.splice(index, 1);
             this.notify("articleDeleted", item);
         } else {
-            console.warn("Artikel nicht gefunden.");
+            console.warn("⚠️ Artikel nicht gefunden.");
         }
     }
 
@@ -259,6 +290,13 @@ export class PoppyModel extends Subject {
     addTag(tagname) {
         let newTag = new Tag(`${tagname}`);
         this.tags.push(newTag);
+    }
+
+    /**
+     * Setzt den Tag eines Items neu.
+     */
+    changeTag(item, tagname) {
+        item.setTag(tagname);
     }
 
     /**
